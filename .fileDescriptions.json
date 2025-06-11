@@ -3,5 +3,11 @@
   "asset": "This directory contains static assets such as images, stylesheets, and JavaScript files that are served to the client.",
   "main.js": "This file is the entry point for the application, initializing the server and defining the main routes.",
   "style.css": "This file contains the styles for the application, defining the look and feel of the user interface.",
-  "animations": "This directory contains CSS animations that enhance the user experience by providing visual feedback and transitions."
+  "animations": "This directory contains CSS animations that enhance the user experience by providing visual feedback and transitions.",
+  ".git/COMMIT_EDITMSG": "TODO: Add description",
+  ".git/index": "TODO: Add description",
+  ".git/logs": "TODO: Add description",
+  ".git/logs/refs": "TODO: Add description",
+  ".git/logs/refs/heads": "TODO: Add description",
+  ".git/refs/heads/main": "TODO: Add description"
 }
