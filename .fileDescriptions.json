@@ -9,5 +9,8 @@
   ".git/logs": "TODO: Add description",
   ".git/logs/refs": "TODO: Add description",
   ".git/logs/refs/heads": "TODO: Add description",
-  ".git/refs/heads/main": "TODO: Add description"
+  ".git/refs/heads/main": "TODO: Add description",
+  ".git/config": "TODO: Add description",
+  ".git/logs/refs/remotes": "TODO: Add description",
+  ".git/refs/remotes": "TODO: Add description"
 }
