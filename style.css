@@ -51,3 +51,23 @@ li a:hover {
 li a.active {
   background-color: #4CAF50;
 }
+
+.github-corner {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  z-index: 1000;
+}
+
+.github-corner img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.github-corner img:hover {
+  transform: scale(1.1);
+}

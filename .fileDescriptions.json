@@ -15,5 +15,7 @@
   ".git/refs/remotes": "TODO: Add description",
   "cache.html": "This file provides an overview of the caching mechanism used in the application, including how data is stored and retrieved.",
   "VirtulMemory.html": "This file explains the concept of virtual memory, how it is implemented in the application, and its benefits for performance and resource management.",
-  "active.js": "This files is responsible for adding the active class to the current page in the navigation bar."
+  "active.js": "This files is responsible for adding the active class to the current page in the navigation bar.",
+  ".git/ORIG_HEAD": "TODO: Add description",
+  ".git/refs/remotes/origin/main": "TODO: Add description"
 }
