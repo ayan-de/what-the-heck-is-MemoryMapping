@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 20px auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  gap: 10px;
+}
+
+li {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 220px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+li a {
+  display: block;
+  color: white;
+  background-color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+li a:hover {
+  background-color: #000000;
+}
+
+/* Active item styling */
+li a.active {
+  background-color: #4CAF50;
+}
