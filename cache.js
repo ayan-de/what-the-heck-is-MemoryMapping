@@ -18,9 +18,12 @@ document.getElementById("calculateButton").addEventListener("click", () => {
     "Memory"
   );
   const cacheBlockElems = createDiagram(cacheBlocks, "cacheDiagram", "Cache");
-
   setTimeout(() => {
-    const container = document.body;
+    const container = document.getElementById("diagram");
+
+    // Clear previous arrows
+    const oldSVGs = container.querySelectorAll("svg");
+    oldSVGs.forEach((svg) => svg.remove());
 
     for (let i = 0; i < memoryBlocks; i++) {
       const cacheIndex = i % cacheBlocks;
@@ -73,40 +76,26 @@ function createDiagram(numBlocks, containerId, label) {
   return blockElements;
 }
 
-function drawArrow(fromElement, toElement, container) {
+function drawArrow(fromEl, toEl, container) {
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.style.position = "absolute";
-  svg.style.left = "0";
   svg.style.top = "0";
+  svg.style.left = "0";
   svg.style.width = "100%";
   svg.style.height = "100%";
-  svg.style.pointerEvents = "none";
   svg.style.zIndex = "0";
   svg.style.pointerEvents = "none";
 
-  const fromRect = fromElement.getBoundingClientRect();
-  const toRect = toElement.getBoundingClientRect();
+  const fromRect = fromEl.getBoundingClientRect();
+  const toRect = toEl.getBoundingClientRect();
   const containerRect = container.getBoundingClientRect();
-
-  // Offset to prevent entering the blocks
   const offset = 150;
 
-  // Start just outside the right edge of the memory block
   const startX = fromRect.right - containerRect.left - offset;
   const startY = fromRect.top + fromRect.height / 2 - containerRect.top;
 
-  // End just outside the left edge of the cache block
   const endX = toRect.left - containerRect.left + offset;
   const endY = toRect.top + toRect.height / 2 - containerRect.top;
-
-  const arrow = document.createElementNS("http://www.w3.org/2000/svg", "line");
-  arrow.setAttribute("x1", startX);
-  arrow.setAttribute("y1", startY);
-  arrow.setAttribute("x2", endX);
-  arrow.setAttribute("y2", endY);
-  arrow.setAttribute("stroke", "red");
-  arrow.setAttribute("stroke-width", "2");
-  arrow.setAttribute("marker-end", "url(#arrowhead)");
 
   const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
   const marker = document.createElementNS(
@@ -124,11 +113,19 @@ function drawArrow(fromElement, toElement, container) {
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
   path.setAttribute("d", "M0,0 L0,7 L10,3.5 z");
   path.setAttribute("fill", "red");
-
   marker.appendChild(path);
   defs.appendChild(marker);
+
+  const arrow = document.createElementNS("http://www.w3.org/2000/svg", "line");
+  arrow.setAttribute("x1", startX);
+  arrow.setAttribute("y1", startY);
+  arrow.setAttribute("x2", endX);
+  arrow.setAttribute("y2", endY);
+  arrow.setAttribute("stroke", "red");
+  arrow.setAttribute("stroke-width", "2");
+  arrow.setAttribute("marker-end", "url(#arrowhead)");
+
   svg.appendChild(defs);
   svg.appendChild(arrow);
-
   container.appendChild(svg);
 }
