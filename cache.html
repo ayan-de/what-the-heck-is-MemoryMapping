@@ -13,8 +13,8 @@
       <li><a href="VirtulMemory.html">Virtual Memory</a></li>
     </ul>
     <header><h1>What the heck is Cache Mapping</h1></header>
-  </body>
-      <a
+
+    <a
       href="https://github.com/ayan-de/what-the-heck-is-MemoryMapping"
       target="_blank"
       class="github-corner"
@@ -25,6 +25,42 @@
         alt="GitHub Logo"
       />
     </a>
-    <script src="active.js"></script>
+    <div id="content">
+      <p>
+        Cache mapping is a technique used in computer architecture to manage how
+        data is stored and retrieved from the cache memory. It determines how
+        blocks of data from main memory are mapped to cache lines, optimizing
+        access speed and efficiency.
+      </p>
+      <p>The three main types of cache mapping are:</p>
 
+      <ul>
+        <li>Direct Mapped Cache</li>
+        <li>Fully Associative Cache</li>
+        <li>Set Associative Cache</li>
+      </ul>
+    </div>
+    <div id="mainSection">
+      <div id="inputSection">
+        <label for="fname">Cache Blocks</label>
+        <input type="text" id="inputCache" placeholder="Blocks in cache" />
+        <label for="fname">Memory Blocks</label>
+        <input type="text" id="inputMemory" placeholder="Blocks in memory" />
+        <label for="inputBlockSize">Block size:</label>
+        <div class="input-with-suffix">
+          <input type="text" id="inputBlockSize" placeholder="Block size" />
+          <span class="suffix">Bytes</span>
+        </div>
+
+        <button id="calculateButton">Calculate</button>
+      </div>
+
+      <div id="diagram">
+        <div id="cacheDiagram"></div>
+        <div id="memoryDiagram"></div>
+      </div>
+    </div>
+  </body>
+  <script src="cache.js"></script>
+  <script src="active.js"></script>
 </html>
